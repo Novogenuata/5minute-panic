@@ -1,0 +1,42 @@
+keys,en,fr
+FULLSCREEN,Fullscreen,Plein écran
+WINDOWED,Windowed,Fenêtré
+ENGLISH,English,Anglais
+FRENCH,French,Français
+TITLE_SCREEN,Title screen,Écran titre
+TOGGLE_SCREEN,Toggle screen,Changer écran
+TOGGLE_LANGUAGE,Toggle Language,Changer langue
+PLAY,Play,Jouer
+SETTINGS,Settings,Paramètres
+INTRO_TIME,It is 11:55pm.,Il est 23h55.
+INTRO_ESSAY,Your teacher just assigned a 10-page essay due at 12:00am.,Ton professeur vient de donner un essai de 10 pages à rendre à minuit.
+INTRO_WORTH,This essay is worth 99% of your grade.,Cet essai vaut 99% de ta note.
+INTRO_INSTRUCTION1,Use your keyboard to type the letters that appear on top of your screen.,Utilise ton clavier pour taper les lettres qui apparaissent en haut de l'écran.
+INTRO_INSTRUCTION2,Drink coffee to reduce stress.,Bois du café pour réduire le stress.
+INTRO_INSTRUCTION3,Silence notifications on your phone by clicking on them.,Coupe les notifications de ton téléphone en cliquant dessus.
+INTRO_INSTRUCTION4,Keep an eye on the time don't let it drop to 0.,Garde un œil sur le temps ne le laisse pas tomber à 0.
+INTRO_READY,ARE YOU READY?,ES-TU PRÊT ?
+INTRO_YES,YEAH!!!!!!!!!!!!!!,OUAIS!!!!!!!!!!!!!!
+INTRO_DROP,I will drop this course,Je vais abandonner ce cours
+FAIL_MESSAGE,You didn't even try...,Tu n'as même pas essayé...
+WIN_MESSAGE,You actually did it.,T'as vraiment réussi.
+NOTIF_1,u awake?,t'es réveillé?
+NOTIF_2,bro did you start the essay??,frère t'as commencé la dissert??
+NOTIF_3,NEW MESSAGE!,NOUVEAU MESSAGE!
+NOTIF_4,Assignment due in 5 minutes,Devoir à rendre dans 5 minutes
+NOTIF_5,Steam sale ending soon,Soldes Steam bientôt terminés
+NOTIF_6,citation needed,citation manquante
+NOTIF_7,you forgot your reference,t'as oublié ta référence
+NOTIF_8,Professor uploaded grades,Le prof a mis les notes en ligne
+NOTIF_9,you can still drop the class,tu peux encore abandonner ce cours
+WRONG_KEY,WRONG KEY! Press: ,MAUVAISE TOUCHE! Appuie sur : 
+PRESS_KEY,Press: ,Appuie sur : 
+PAGE,PAGE ,PAGE 
+ESSAY_DONE,ESSAY DONE!,DISSERTATION TERMINÉE!
+STRESS,Stress: ,Stress : 
+COFFEE,Coffee: ,Café : 
+TIME_LEFT,Time left: ,Temps restant :
+FAIL_MESSAGE_STRESS,Too stressed? Write faster next time.,Trop stressé? Écris plus vite la prochaine fois.
+PLAY_AGAIN,Play again,Rejouer
+WIN_MESSAGE,Remember to check your work.,N'oublie pas de vérifier ton travail.
+PLAY_AGAIN2,Play again,Rejouer

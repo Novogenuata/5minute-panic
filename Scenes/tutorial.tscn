@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn5ud0g3q14t5"]
+
+[ext_resource type="Script" uid="uid://cnywycv7qnli4" path="res://Scripts/tutorial.gd" id="1_feyax"]
+[ext_resource type="Texture2D" uid="uid://bltyy8lv4a22q" path="res://Assets/Background.png" id="1_ka2pi"]
+[ext_resource type="AudioStream" uid="uid://bl614em80jkqc" path="res://Assets/Cherry Blossom.mp3" id="3_omtrn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ka2pi"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_feyax"]
+font_size = 24
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_feyax")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ka2pi")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -269.0
+offset_right = 345.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_TIME"
+label_settings = SubResource("LabelSettings_ka2pi")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_ESSAY"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_WORTH"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_INSTRUCTION1"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_INSTRUCTION2"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_INSTRUCTION3"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_INSTRUCTION4"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label8" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INTRO_READY"
+label_settings = SubResource("LabelSettings_feyax")
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "INTRO_YES"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "INTRO_DROP"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_omtrn")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg1knvmhpxs4i"]
+
+[ext_resource type="Texture2D" uid="uid://bltyy8lv4a22q" path="res://Assets/Background.png" id="1_4geyq"]
+[ext_resource type="Script" uid="uid://bwbdah8lt6tqb" path="res://Scripts/settings.gd" id="1_i44u3"]
+[ext_resource type="AudioStream" uid="uid://bl614em80jkqc" path="res://Assets/Cherry Blossom.mp3" id="3_lhmql"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i44u3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4geyq")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -245.0
+offset_right = 294.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "TOGGLE_SCREEN"
+horizontal_alignment = 1
+
+[node name="fs" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "FULLSCREEN"
+
+[node name="wn" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "WINDOWED"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "TOGGLE_LANGUAGE"
+horizontal_alignment = 1
+
+[node name="fr" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "FRENCH"
+
+[node name="en" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "ENGLISH"
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ts" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+text = "TITLE_SCREEN"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lhmql")
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/fs" to="." method="_on_fs_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/wn" to="." method="_on_wn_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer2/fr" to="." method="_on_fr_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer2/en" to="." method="_on_en_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/ts" to="." method="_on_ts_pressed"]

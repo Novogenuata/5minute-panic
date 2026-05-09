@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnne3x0ktp7cu"]
+
+[ext_resource type="Script" uid="uid://c1vjhmocbk7bm" path="res://Scripts/phone.gd" id="1_knwvw"]
+[ext_resource type="Texture2D" uid="uid://bii0sm2b5b71e" path="res://Assets/PhoneSprite.png" id="1_oju8d"]
+[ext_resource type="AudioStream" uid="uid://dm5yy6cplr7k6" path="res://Assets/Text 1.wav" id="3_m5ye2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knwvw"]
+atlas = ExtResource("1_oju8d")
+region = Rect2(1620, 0, 1620, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5ye2"]
+atlas = ExtResource("1_oju8d")
+region = Rect2(1620, 0, 1620, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hkyp"]
+atlas = ExtResource("1_oju8d")
+region = Rect2(0, 2160, 1620, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hxnx"]
+atlas = ExtResource("1_oju8d")
+region = Rect2(0, 0, 1620, 2160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp6br"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knwvw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5ye2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hkyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hxnx")
+}],
+"loop": true,
+"name": &"Shake",
+"speed": 12.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m5ye2"]
+font_size = 34
+font_color = Color(0.73754567, 0, 0.20710504, 1)
+outline_size = 5
+outline_color = Color(0.6117809, 0, 0.15997833, 1)
+shadow_size = 10
+shadow_color = Color(0.45882353, 0.2784314, 0.19215687, 0.47058824)
+shadow_offset = Vector2(2, -2)
+
+[node name="Phone" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_knwvw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wp6br")
+animation = &"Idle"
+
+[node name="PhoneButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -470.0
+offset_right = 219.0
+offset_bottom = 318.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -126.0
+offset_top = -147.0
+offset_right = 68.0
+offset_bottom = -100.0
+text = "placeholder"
+label_settings = SubResource("LabelSettings_m5ye2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m5ye2")
+volume_db = 24.0
+
+[connection signal="pressed" from="PhoneButton" to="." method="_on_phone_button_pressed"]

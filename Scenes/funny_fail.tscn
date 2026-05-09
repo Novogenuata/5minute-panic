@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://be8ab8rqiablt"]
+
+[ext_resource type="Script" uid="uid://bjw40horyt4af" path="res://Scripts/funny_fail.gd" id="1_p8wxr"]
+[ext_resource type="Texture2D" uid="uid://bltyy8lv4a22q" path="res://Assets/Background.png" id="1_w8udq"]
+[ext_resource type="AudioStream" uid="uid://bl614em80jkqc" path="res://Assets/Cherry Blossom.mp3" id="3_0cqkj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8wxr"]
+font_size = 200
+font_color = Color(1, 0, 0, 1)
+outline_color = Color(0.856057, 0.3377414, 0.369918, 1)
+
+[node name="FunnyFail" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p8wxr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w8udq")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -235.0
+offset_right = 328.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+text = "F"
+label_settings = SubResource("LabelSettings_p8wxr")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+text = "FAIL_MESSAGE"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TITLE_SCREEN"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0cqkj")
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

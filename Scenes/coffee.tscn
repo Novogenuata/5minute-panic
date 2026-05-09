@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://87wv7tmkuway"]
+
+[ext_resource type="Texture2D" uid="uid://bwra5b3h2kthf" path="res://Assets/Coffee.png" id="1_nj0ql"]
+[ext_resource type="Script" uid="uid://bj162bhdgxi15" path="res://Scripts/coffee.gd" id="1_oopha"]
+[ext_resource type="Texture2D" uid="uid://dhs83fo2r2ige" path="res://Assets/coffedepleted.png" id="3_u4wqq"]
+
+[sub_resource type="Theme" id="Theme_oopha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oopha"]
+font_size = 45
+
+[node name="coffee" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oopha")
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1571.0
+offset_top = -813.00006
+offset_right = 589.0
+offset_bottom = 806.99994
+grow_horizontal = 2
+scale = Vector2(0.84537035, 0.8623457)
+texture = ExtResource("1_nj0ql")
+
+[node name="Sprite2D2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1571.0
+offset_top = -813.00006
+offset_right = 589.0
+offset_bottom = 806.99994
+grow_horizontal = 2
+scale = Vector2(0.84537035, 0.8623457)
+texture = ExtResource("3_u4wqq")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -258.0
+offset_right = 234.0
+offset_bottom = 293.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 16.0
+offset_right = 60.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme = SubResource("Theme_oopha")
+theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_top = -56.0
+offset_right = -49.0
+offset_bottom = 7.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_oopha")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

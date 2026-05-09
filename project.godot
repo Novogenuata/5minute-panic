@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="5 Minute Panic"
+run/main_scene="uid://bo166bhs7a5ed"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+LanguageManager="*res://Scripts/LanguageManager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/New Text Document.en.translation", "res://translations/New Text Document.fr.translation")
+
+[plugins]
+
+claude_api/api_key=""

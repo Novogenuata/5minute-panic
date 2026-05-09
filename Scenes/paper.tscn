@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba3ea3s51bi76"]
+
+[ext_resource type="Script" uid="uid://bb7t6soboipxu" path="res://Scripts/paper.gd" id="1_322pb"]
+[ext_resource type="Texture2D" uid="uid://m2m87a3g6at0" path="res://Assets/Paper.png" id="1_c7gsp"]
+
+[node name="Paper" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_322pb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_c7gsp")
+
+[node name="CurrentPrompt" type="Label" parent="."]
+layout_mode = 0
+offset_left = 612.0
+offset_top = -72.00001
+offset_right = 704.0
+offset_bottom = -49.000008
+scale = Vector2(3.7482538, 3.4558866)
+text = "Placeholder"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 358.0
+offset_top = 135.0
+offset_right = -82.0
+offset_bottom = 870.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 150
+scroll_active = false
